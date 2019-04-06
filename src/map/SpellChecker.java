@@ -10,6 +10,7 @@ Next go d lines contain one known word per line, next — the number l of lines 
 Write a program that outputs those words from the text, which are not found in the dictionary (i.e. erroneous).
 Your shell checker should be case insensitive. The words are entered in an arbitrary order.
 Words, which are not found in the dictionary, should not be duplicated in the output.
+
  */
 
 package map;
