@@ -1,3 +1,17 @@
+/*
+Write a program simulating a stack that can effectively return the current max element.
+Your program should read a sequence of commands of different types from the standard input.
+
+There are three types of commands:
+
+push v - add an element (v) to a top of the stack;
+pop - remove the top element of the stack;
+max - return the current max in the stack.
+The time complexity of these operations should not depend on the stack size (constant time, O(1)).
+
+Hint: you may use several standard stacks to write a solution.
+ */
+
 package queue;
 
 import java.util.ArrayDeque;
