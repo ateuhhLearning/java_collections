@@ -17,24 +17,25 @@ package queue;
 import java.util.*;
 
 public class Brackets {
-    private static List<String> list = new ArrayList<>();
+    private static List<String> list = Arrays.asList("(", "[", "{", "}", "]",")");
     private static Deque<Integer> deque = new ArrayDeque();
     private static  boolean checker = true;
 
     public static void main(String[] args) {
-        addElements(list);
         Scanner scan = new Scanner(System.in);
         String brackets = scan.next();
+        int length = list.size() - 1; // index of last closed bracket
+        int middle = (length / 2) + 1; // index of first closed bracket
 
         for(int i = 0; i < brackets.length(); i++) {
             String c = Character.toString(brackets.charAt(i));
             int index = getIndex(c);
-            if (index < 3) {
+            if (index < middle) {
                 deque.add(index);
             } else {
                 if (deque.peek() != null && index != -1) {
                     int last = deque.pollLast();
-                    if (last + index != 5) {
+                    if (last + index != length) {
                         checkerFalse();
                         break;
                     }
@@ -48,15 +49,6 @@ public class Brackets {
             result();
         }
 
-    }
-
-    private static void addElements(List<String> list) {
-        list.add("(");
-        list.add("[");
-        list.add("{");
-        list.add("}");
-        list.add("]");
-        list.add(")");
     }
 
     private static int getIndex(String c) {
